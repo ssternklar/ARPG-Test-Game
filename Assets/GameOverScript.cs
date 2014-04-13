@@ -15,7 +15,7 @@ public class GameOverScript : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if(GUI.Button(new Rect(100, 200, 100, 100), "Retry"))
+		if(GUI.Button(new Rect(300, 200, 100, 100), "Retry"))
 		{
 			Application.LoadLevel("Level 1");	
 		}
