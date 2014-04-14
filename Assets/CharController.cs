@@ -64,10 +64,14 @@ public class CharController : MonoBehaviour
 	private bool isControllable = true;
 	
 	private float oldAnimTime = 0f;
+
+	public Transform HealthBar;
 	
 	// Use this for initialization
 	void Start ()
 	{
+		Screen.lockCursor = true;
+
 		//sets the current direction to forward
 		moveDirection = transform.TransformDirection(Vector3.forward);
 		
@@ -98,7 +102,6 @@ public class CharController : MonoBehaviour
 		}
 		controller = (CharacterController)GetComponent("CharacterController");
 	}
-
 	// Update is called once per frame
 	void Update ()
 	{
@@ -115,6 +118,12 @@ public class CharController : MonoBehaviour
 			ApplyJumping();
 		}
 
+		if(Input.GetButton("Fire1"))
+		{
+			Screen.lockCursor = true;
+		}
+
+		HealthBar.localScale = new Vector3(health / (10/6), HealthBar.localScale.y, HealthBar.localScale.z);
 
 		ApplyHorizontalMovement();
 
@@ -444,6 +453,7 @@ public class CharController : MonoBehaviour
 		health -= (int)moveDir.w;
 		if(health <= 0)
 		{
+			Screen.lockCursor = false;
 			Application.LoadLevel("Game Over");
 		}
 	}

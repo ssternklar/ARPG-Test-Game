@@ -58,7 +58,6 @@ public class EnemyScript : MonoBehaviour {
 				var moveDir = transform.TransformDirection(Vector3.forward);
 				transform.position += moveDir * moveSpeed * Time.deltaTime;
 				currentTime = Time.time;
-				Debug.Log("MOVING");
 			}
 			else if(range <= dashRange + 1 && Time.time < currentTime + dashChargeTime)
 			{
@@ -78,9 +77,6 @@ public class EnemyScript : MonoBehaviour {
 		}
 		else
 			Debug.DrawRay(transform.position, (target.position - transform.position));
-			//transform.LookAt(new Vector3(target.position.x, transform.localScale.y/2, target.position.z));
-			//var moveDir = transform.TransformDirection(Vector3.forward);
-			//transform.position += moveDir * Time.deltaTime * moveSpeed;
 	}
 	void OnTriggerEnter(Collider collider)
 	{
@@ -111,7 +107,10 @@ public class EnemyScript : MonoBehaviour {
 		if(health <= 0)
 		{
 			if(type == "BOSS")
+			{
+				Screen.lockCursor = false;
 				Application.LoadLevel("Victory");
+			}
 			GameObject.Destroy(gameObject);
 		}
 	}
