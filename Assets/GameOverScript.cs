@@ -15,11 +15,11 @@ public class GameOverScript : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if(GUI.Button(new Rect(300, 200, 100, 100), "Retry"))
+		if(GUI.Button(new Rect((int)(Screen.width * (1f/3f)) - 50, (int)(Screen.height * .4f) - 50, 100, 100), "Retry"))
 		{
 			Application.LoadLevel("Level 1");	
 		}
-		if(GUI.Button(new Rect(600, 200, 100, 100), "Title Screen"))
+		if(GUI.Button(new Rect((int)(Screen.width * (2f/3f)) - 50, (int)(Screen.height * .4f) - 50, 100, 100), "Title Screen"))
 		{
 			Application.LoadLevel("Title Screen");
 		}

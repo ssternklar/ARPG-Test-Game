@@ -15,7 +15,7 @@ public class TitleScript : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if(GUI.Button(new Rect(200, 200, 100, 100), "Start"))
+		if(GUI.Button(new Rect((int)(Screen.width / 2), (int)(Screen.height * .65), 100, 100), "Start"))
 		{
 			Application.LoadLevel("Level 1");	
 		}

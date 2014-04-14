@@ -15,7 +15,7 @@ public class VictoryScript : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if(GUI.Button(new Rect(100, 200, 100, 100), "Back to Title"))
+		if(GUI.Button(new Rect((int)(Screen.width * (.6)), Screen.height / 2, 100, 100), "Back to Title"))
 		{
 			Application.LoadLevel("Title Screen");	
 		}
