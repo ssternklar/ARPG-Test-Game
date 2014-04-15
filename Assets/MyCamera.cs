@@ -43,7 +43,7 @@ public class MyCamera : MonoBehaviour {
 		if(target)
 		{
 			float tx = (float)Input.GetAxis("Mouse X") * xSpeed * 0.1f;
-			float ty = (float)Input.GetAxisRaw("Mouse Y") * ySpeed * 0.1f;
+			float ty = -(float)Input.GetAxisRaw("Mouse Y") * ySpeed * 0.1f;
 			
 			x = Mathf.Lerp(x, x + tx, 10 * Time.deltaTime);
 			y = Mathf.Lerp(y, y+ty, 10 * Time.deltaTime);
